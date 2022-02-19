@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+      /* gradient fallbacks taken from csstricks.com */
+      body {
+        background-color: red;  
+        
+        /* SVG fallback for IE 9 (could be data URI, or could use filter) */
+        background-image: url(fallback-gradient.svg);
+        
+        /* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+        background-image: -webkit-gradient(linear, left top, right top, from(red), to(#f06d06));
+        
+        /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+        background-image: -webkit-linear-gradient(left, red, #f06d06);
+        
+        /* Firefox 3.6 - 15 */
+        background-image: -moz-linear-gradient(left, red, #f06d06);
+        
+        /* Opera 11.1 - 12 */
+        background-image: -o-linear-gradient(left, red, #f06d06);
+        
+        /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+        background-image: linear-gradient(to right, red, #f06d06);
+        font-family: 'Libre Baskerville', serif;
+        background-repeat: no-repeat;
+        overflow-x:hidden;
+      }
+      .secondary-navbar{
+        position: absolute;
+        /* width: 100vw; */
+      }
+      .secondary-navbar ul{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        font-family: 'Libre Baskerville', serif;
+        list-style-type: none;
+        justify-content: space-around;
+        border-top: 1px solid white;
+        /* border-bottom: 1px solid white; */
+        padding-top: 0.5rem;
+        padding-bottom: 0px;
+        margin-left: -2em;
+      }
+      .secondary-navbar ul li{
+        /* border-right: 1px solid white; */
+        border-bottom: 1px solid white;
+      }
+      #home{
+        display: flex;
+        margin-top: 8rem;
+        justify-content: space-around;
+        padding: 1rem;
+        color: white;
+      }
+      .home1{
+        width: 700px;
+      }
+      .home1 p{
+        margin-bottom: 3rem;
+      }
+      .home1 button{
+        clip-path: polygon(15% 0, 100% 0, 100% 65%, 86% 100%, 0 100%, 0 35%);
+        padding: 1rem 2rem;
+        background: #833ab4;
+        background: linear-gradient(to right, #fd9502, #ff0707, #2f00ff);
+        border: 1px solid white;
+        margin-right: 3rem;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .home1 button i{
+        margin-right: 0.5rem;
+      }
+      .home2{
+      }
+   
+  </style>
+</head>
+<body>
+
+    <div class="container-fluid" style="position: absolute;">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="h2" style="margin-left: 1rem;">Logo</div>
+          <form class="col-9" action="/action_page.php">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="sth">
+              <span class="input-group-text">search</span>
+            </div>
+          </form>
+          <div style="margin-right: 1rem">
+            <i class="fa-solid fa-user-plus h3"></i>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="secondary-navbar container-fluid">
+          <ul>
+            <li>Home</li>
+            <li>Roadmap</li>
+            <li>Nft-Gallery</li>
+            <li>Sales</li>
+            <li>Connect-Metamask</li>
+            <li>Staking-Rewards</li>
+            <li>P2E-game</li>
+            <li>Teams</li>
+            <li>Our-Vision</li>
+            <li>Discord</li>
+            <li>Twitter</li>
+            <li>FAQ</li>
+          </ul>
+      </div>
+      
+      <div id="home">
+        <div class="home1">
+          <h1>Discover And Collect</h1>
+          <h1>Your Favourite Digital</h1>
+          <h2>NTFs Art</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi alias nesciunt facere iure odit quos similique dolor, molestias numquam </p>
+
+          <button><i class="fa-brands fa-hive"></i>Explore more</button>
+          <button><i class="fa-brands fa-hive"></i>Watch NFT</button>
+        </div>
+        <div class="home2">
+          <img style="width: 400px; height: 400px;" src="./photo/home2.png" alt="">
+        </div>
+      </div>
+    </div>
+    
+
+
+
+
+
+    <!-- threejs.org canvas lines example -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+
+<script>
+  var mouseX = 0,
+      mouseY = 0,
+      windowHalfX = window.innerWidth / 2,
+      windowHalfY = window.innerHeight / 2,
+      SEPARATION = 200,
+      AMOUNTX = 10,
+      AMOUNTY = 10,
+      camera,
+      scene,
+      renderer;
+  
+  init();
+  animate();
+
+	function init() {
+
+  	var container,
+        separation = 100,
+        amountX = 50,
+        amountY = 50,
+        particle;
+    
+    container = document.createElement( 'div' );
+    document.body.appendChild( container );
+
+    scene = new THREE.Scene();
+
+    renderer = new THREE.CanvasRenderer({ alpha: true }); // gradient; this can be swapped for WebGLRenderer
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    container.appendChild( renderer.domElement );
+    
+    camera = new THREE.PerspectiveCamera(
+    	75,
+      window.innerWidth / window.innerHeight,
+      1,
+      10000
+    );
+    camera.position.z = 100;
+
+		// particles
+    var PI2 = Math.PI * 2;
+    var material = new THREE.SpriteCanvasMaterial({
+    	color: 0xffffff,
+    	program: function ( context ) {
+				context.beginPath();
+        context.arc( 0, 0, 0.5, 0, PI2, true );
+        context.fill();
+      }
+    });
+    
+    var geometry = new THREE.Geometry();
+
+    for ( var i = 0; i < 100; i ++ ) {
+      particle = new THREE.Sprite( material );
+      particle.position.x = Math.random() * 2 - 1;
+      particle.position.y = Math.random() * 2 - 1;
+      particle.position.z = Math.random() * 2 - 1;
+      particle.position.normalize();
+      particle.position.multiplyScalar( Math.random() * 10 + 450 );
+      particle.scale.x = particle.scale.y = 10;
+      scene.add( particle );
+      geometry.vertices.push( particle.position );
+    }
+
+    // lines
+    var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 0.5 } ) );
+    scene.add( line );
+
+    // mousey
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+		document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+		
+ 		window.addEventListener( 'resize', onWindowResize, false );
+
+	} // end init();
+
+	function onWindowResize() {
+
+  	windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+	}
+
+	function onDocumentMouseMove(event) {
+
+  	mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+
+  }
+
+  function onDocumentTouchStart( event ) {
+
+		if ( event.touches.length > 1 ) {
+
+    	event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+    }
+	}
+
+  function onDocumentTouchMove( event ) {
+
+  	if ( event.touches.length == 1 ) {
+
+    	event.preventDefault();
+
+      mouseX = event.touches[ 0 ].pageX - windowHalfX;
+      mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+		}
+	}
+
+	function animate() {
+    
+		requestAnimationFrame( animate );
+    render();
+    
+	}
+
+	function render() {
+		
+    camera.position.x += ( mouseX - camera.position.x ) * .05;
+    camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
+    camera.lookAt( scene.position );
+
+    renderer.render( scene, camera );
+  
+  }
+</script>
+</body>
+</html>
